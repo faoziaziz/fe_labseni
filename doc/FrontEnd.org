@@ -1,0 +1,12 @@
+#+TITLE: Website Ini
+
+* History
+** Akses API ke Blog
+Saya mencoba menambahkan akses API dari blogspot supaya bisa diakses oleh
+reactjs. Sayangnya saya menemukan kasus baru karena disini, saya harus membuat
+slug untuk bisa diakses secara url. Beberapa hari yang lalu saya menemukan link
+itu namun sekarang linknya entah kemana. 
+
+Oke sekarang saya menemukan link itu kembali. [[https://soshace.com/this-is-how-i-created-a-simple-app-using-react-routing/][Link permalink slug,]] Disana saya 
+menemukan methode untuk bisa mengetahhui bagaimana untuk membuat permalink
+untuk akses ke kontent yang akan diberikan.
