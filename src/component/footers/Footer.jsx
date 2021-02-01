@@ -19,9 +19,9 @@ const Footer =()=>{
                 <Col style={{alignContent: 'center', alignItems: 'center'}} xs={6} md={4}>
                     <p >
                         <b>Link Terkait</b><br />
-                        <a href="https://bukalapak.com">Bukalapak</a><br />
-                        <a href="https://tokopedia.com">Tokopedia</a><br />
-                        <a href="https://instagram.com">Instagram</a><br />
+                        <a href="https://bukalapak.com/u/aziz_faozi">Bukalapak</a><br />
+                        <a href="https://tokopedia.com/labseni">Tokopedia</a><br />
+                        <a href="https://instagram.com/labseni">Instagram</a><br />
                     </p>
 
                 </Col>
