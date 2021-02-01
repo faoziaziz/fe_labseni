@@ -4,48 +4,91 @@ import Footer from '../../component/footers/Footer';
 import ControlledCarousel from '../../component/headers/ControlledCarousel';
 import IntervalCarousel from '../../component/headers/IntervalCarousel';
 import {
-    Jumbotron, 
+    Jumbotron,
     Button,
     Container,
     Carousel,
+    Row,
+    Col,
+    ListGroup
 } from 'react-bootstrap';
-const Home=()=>{
-    
+const Home = () => {
+
 
     return (
-        <div style={{backgroundColor: 'black'}}>
+        <div style={{ backgroundColor: 'black' }}>
             <Header />
-            <Container>
-            <IntervalCarousel />
-            </Container>
-            <hr/>
-            <div style={{backgroundColor: '#006b76'}}>
-                <Container style={{color: 'white'}}>
-                    <p>Project</p>
-                </Container>
-            </div>
-            <hr />
-            <div style={{backgroundColor: '#4caf50'}}>
             
-                <Container style={{color: 'white'}}>
-                    <p>Product</p>
-                </Container>
-            </div>
-            <hr />
-            <div style={{backgroundColor: '#006b76'}}>
-                <Container style={{color: 'white'}}>
-                   <p>Software</p>
-                </Container>
-            </div>
-            <hr />
-            <div style={{backgroundColor: '#4caf50'}}>
             
-                <Container style={{color: 'white'}}>
-                    <p>Shop</p>
-                </Container>
+            <div>
+                <ListGroup>
+                    <ListGroup.Item style={{backgroundColor: 'black'}}>
+                        <IntervalCarousel />
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="secondary">
+                        <Container>
+                            Riset
+                            <ListGroup horizontal className="my-2" >
+                                <ListGroup.Item>This ListGroup</ListGroup.Item>
+                                <ListGroup.Item>renders horizontally</ListGroup.Item>
+                                <ListGroup.Item>on </ListGroup.Item>
+                                <ListGroup.Item>and above!</ListGroup.Item>
+                            </ListGroup>
+                        </Container>
+                    </ListGroup.Item>
+                    <ListGroup.Item  variant="success">
+                        <Container>
+                            Product
+                            <ListGroup horizontal className="my-2" >
+                                <ListGroup.Item>This ListGroup</ListGroup.Item>
+                                <ListGroup.Item>renders horizontally</ListGroup.Item>
+                                <ListGroup.Item>on </ListGroup.Item>
+                                <ListGroup.Item>and above!</ListGroup.Item>
+                            </ListGroup>
+                        </Container>
+                    </ListGroup.Item>
+                    <ListGroup.Item variant="light">
+                        <Container>
+                            Project
+                            <ListGroup horizontal className="my-2" >
+                                <ListGroup.Item>This ListGroup</ListGroup.Item>
+                                <ListGroup.Item>renders horizontally</ListGroup.Item>
+                                <ListGroup.Item>on </ListGroup.Item>
+                                <ListGroup.Item>and above!</ListGroup.Item>
+                            </ListGroup>
+                        </Container>
+                    </ListGroup.Item>
+                   
+                    <ListGroup.Item variant="warning">
+                        <Container>
+                            Shop
+                            <ListGroup horizontal className="my-2" >
+                                <ListGroup.Item>This ListGroup</ListGroup.Item>
+                                <ListGroup.Item>renders horizontally</ListGroup.Item>
+                                <ListGroup.Item>on </ListGroup.Item>
+                                <ListGroup.Item>and above!</ListGroup.Item>
+                            </ListGroup>
+                        </Container>
+                    </ListGroup.Item>
+
+                    <ListGroup.Item variant="info">
+                        <Container>
+                            Konsultasi
+                            <ListGroup horizontal className="my-2" >
+                                <ListGroup.Item>
+                                    Harusnya ini Gambar : ini bagian text
+                                </ListGroup.Item>
+                                <ListGroup.Item>renders horizontally</ListGroup.Item>
+                                <ListGroup.Item>on </ListGroup.Item>
+                                <ListGroup.Item>and above!</ListGroup.Item>
+                            </ListGroup>
+                        </Container>
+                    </ListGroup.Item>
+                 
+                </ListGroup>
             </div>
+           
             
-            <hr />
             <Footer />
         </div>
     );
