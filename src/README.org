@@ -1,0 +1,5 @@
+#+TITLE: Front End labseni
+
+* Referensi 
+1. [[https://www.codegrepper.com/code-examples/javascript/getting+slug+from+react+router][Slug react]]
+2. [[https://soshace.com/this-is-how-i-created-a-simple-app-using-react-routing/][Slug React 1]]
