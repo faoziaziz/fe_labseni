@@ -42,8 +42,7 @@ const Home = () => {
                             </ListGroup>
                         </Container>
                     </ListGroup.Item>
-
-		    <ListGroup.Item  variant="success">
+                    <ListGroup.Item  variant="success">
                         <Container>
                             Product
                             <ListGroup horizontal className="my-2" >
@@ -54,7 +53,6 @@ const Home = () => {
                             </ListGroup>
                         </Container>
                     </ListGroup.Item>
-
                     <ListGroup.Item variant="light">
                         <Container>
                             Project
