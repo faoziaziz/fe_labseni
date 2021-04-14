@@ -11,7 +11,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './container/pages/Home.jsx';
 import Blog from './container/pages/Blog.jsx';
+
 import Post from './container/pages/Post.jsx';
+import Notes from './container/pages/Notes.jsx';
+
+
 import {
   Route,
   Switch,
@@ -30,8 +34,12 @@ const routing=(
     <div>
       <Route exact path="/" component={Home} />
       <Route exact path="/home" component={Home} />
-	    <Route exact path="/about" component={About} />
-      <Route path="/post/:slug" component={Post} /> 
+
+	<Route exact path="/about" component={About} />
+	<Route exact path="/notes" component={Notes} />
+	<Route path="/post/:slug" component={Post} /> 
+	<Route exact path="/about" component={About} />
+
 	   
 
     </div>
