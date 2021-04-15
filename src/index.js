@@ -15,6 +15,7 @@ import Blog from './container/pages/Blog.jsx';
 import Post from './container/pages/Post.jsx';
 import Notes from './container/pages/Notes.jsx';
 
+import SimpleMap from './container/pages/SimpleMap.jsx';
 
 import {
   Route,
@@ -39,6 +40,8 @@ const routing=(
 	<Route exact path="/notes" component={Notes} />
 	<Route path="/notes/:slug" component={Post} /> 
 	<Route exact path="/about" component={About} />
+	<Route exact path="/map" component={SimpleMap} />
+	
 
 	   
 
