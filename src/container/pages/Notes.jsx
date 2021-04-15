@@ -31,7 +31,7 @@ const Notes =()=>{
 	  {
 	      data.items.map(item=>(
 		  <li key={item.id}>
-		    <a href={`http://localhost:3000/notes/${item.id}`}>{item.title}</a>
+		    <a href={`https://labseni.com/notes/${item.id}`}>{item.title}</a>
 		    {parse(item.content)}
 		  </li>
 	      )
