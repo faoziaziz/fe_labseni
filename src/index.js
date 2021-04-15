@@ -37,7 +37,7 @@ const routing=(
 
 	<Route exact path="/about" component={About} />
 	<Route exact path="/notes" component={Notes} />
-	<Route path="/post/:slug" component={Post} /> 
+	<Route path="/notes/:slug" component={Post} /> 
 	<Route exact path="/about" component={About} />
 
 	   

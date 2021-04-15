@@ -86,7 +86,7 @@ export default function Post(){
 		      
 		  <li key={item.id}>
 		    <h1 className="title">{item.title}</h1>
-		    <a href={item.url}>{item.title}</a>
+		    
 		    {parse(item.content)}
 		  </li>
 	      )
