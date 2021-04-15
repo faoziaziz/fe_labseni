@@ -5,7 +5,7 @@ const Header = () => {
         <div>
             <>
                 <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href="home">
+                    <Navbar.Brand href="https://labseni.com">
                         <img
                             alt=""
                             src={logo}
@@ -14,6 +14,16 @@ const Header = () => {
                             className="d-inline-block align-top"
                         />{' '}
                         LabSeni
+                    </Navbar.Brand>
+		     <Navbar.Brand href="https://labseni.com/notes">
+                        <img
+                            alt=""
+                            src={logo}
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                        />{' '}
+                        Notes
                     </Navbar.Brand>
                 </Navbar>
             </>
