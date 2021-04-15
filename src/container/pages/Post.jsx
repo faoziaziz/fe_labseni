@@ -22,7 +22,10 @@ const postsData = require('./_posts.json');
 const findPostBySlug=(slug, data)=>{
     console.log("ampas")
     console.log( data);
-       return data.items.find(o=>o.id===slug);
+    console.log("slug");
+    console.log(slug);
+    console.log(data.items.filter(o=>o.id.includes(slug)));
+    return data.items.filter(o=>o.id.includes(slug));
 }
 
 export default function Post(){
@@ -59,19 +62,40 @@ export default function Post(){
 	fetchData();
 	
 	
+	
     }, []);
 
-    var {slug}=useParams(),
-	post = findPostBySlug(slug, data);
+    var {slug}=useParams();
+    var post = {items: findPostBySlug(slug, data)};
 
-    
+    console.log("posteing");
+    console.log(post);
+    console.log("title2")
+    console.log(post.items.title);
     
 
     return (
         <div className="post-content-view">
-            <h1 className="title">{post.items.title}</h1> 
-            <content>{post.items.content}</content>   
+	 
+         
+         
+	    	<div style={{backgroundColor: 'white'}}>
+	  <ul>
+	  {
+	      post.items.map(item=>(
+		      
+		  <li key={item.id}>
+		    <h1 className="title">{item.title}</h1>
+		    <a href={item.url}>{item.title}</a>
+		    {parse(item.content)}
+		  </li>
+	      )
+			    )
+	  }
+	  </ul>
+	</div>
         </div>
+	
     );
 
 }
