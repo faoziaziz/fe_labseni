@@ -10,6 +10,11 @@ import parse, { domToReact, htmlToDOM } from 'html-react-parser';
 import axios from 'axios';
 import {useParams} from 'react-router';
 
+import Header from '../../component/headers/Header';
+import Footer from '../../component/footers/Footer';
+
+import ControlledCarousel from '../../component/headers/ControlledCarousel';
+import IntervalCarousel from '../../component/headers/IntervalCarousel';
 /* post data harus dirubah dari bentuk api */
 const postsData = require('./_posts.json');
 
@@ -74,11 +79,10 @@ export default function Post(){
     console.log(post.items.title);
     
 
-    return (
+    return (<div>
+	    <Header />
         <div className="post-content-view">
-	 
-         
-         
+	  
 	    	<div style={{backgroundColor: 'white'}}>
 	  <ul>
 	  {
@@ -94,7 +98,9 @@ export default function Post(){
 	  }
 	  </ul>
 	</div>
-        </div>
+            </div>
+	    <Footer />
+	    </div>
 	
     );
 

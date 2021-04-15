@@ -6,7 +6,11 @@
 import React, {useState, Fragment, useEffect} from 'react';
 import parse, { domToReact, htmlToDOM } from 'html-react-parser';
 import axios from 'axios';
+import Header from '../../component/headers/Header';
+import Footer from '../../component/footers/Footer';
 
+import ControlledCarousel from '../../component/headers/ControlledCarousel';
+import IntervalCarousel from '../../component/headers/IntervalCarousel';
 
 /* This notes just for show the posting from google */
 const Notes =()=>{
@@ -26,19 +30,24 @@ const Notes =()=>{
     }, []);
 
     return (
+	<div>
+	  <Header />
 	<div style={{backgroundColor: 'white'}}>
 	  <ul>
 	  {
 	      data.items.map(item=>(
-		  <li key={item.id}>
-		    <a href={`https://labseni.com/notes/${item.id}`}>{item.title}</a>
+		 <div>
+		  <a href={`https://labseni.com/notes/${item.id}`}>{item.title}</a>
+		  
 		    {parse(item.content)}
-		  </li>
+		 </div>
 	      )
 			    )
 	  }
 	  </ul>
-	</div>
+	    </div>
+	    <Footer />
+	    </div>
     );
 
 }
