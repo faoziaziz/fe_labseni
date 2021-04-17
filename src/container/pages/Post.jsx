@@ -9,7 +9,7 @@ import React, {useState, Fragment, useEffect} from 'react';
 import parse, { domToReact, htmlToDOM } from 'html-react-parser';
 import axios from 'axios';
 import {useParams} from 'react-router';
-
+import {Button, Navbar, Jumbotron} from 'react-bootstrap';
 import Header from '../../component/headers/Header';
 import Footer from '../../component/footers/Footer';
 
@@ -81,18 +81,29 @@ export default function Post(){
 
     return (<div>
 	    <Header />
-        <div className="post-content-view">
+	    
+            <div className="post-content-view">
+	    
 	  
 	    	<div style={{backgroundColor: 'white'}}>
 	  <ul>
 	  {
 	      post.items.map(item=>(
 		      
-		  <li key={item.id}>
-		    <h1 className="title">{item.title}</h1>
+		  <div>
+		    <Jumbotron>
+	      
+	      <h1 className="display-3"  style={{
+		      display: "flex",
+		      justifyContent: "center",
+		      alignItems: "center"
+		  }} >{item.title}</h1>
+	    </Jumbotron>
+		    
+		    
 		    
 		    {parse(item.content)}
-		  </li>
+		  </div>
 	      )
 			    )
 	  }

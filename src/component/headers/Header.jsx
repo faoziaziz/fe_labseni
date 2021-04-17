@@ -16,13 +16,7 @@ const Header = () => {
                         LabSeni
                     </Navbar.Brand>
 		     <Navbar.Brand href="https://labseni.com/notes">
-                        <img
-                            alt=""
-                            src={logo}
-                            width="30"
-                            height="30"
-                            className="d-inline-block align-top"
-                        />{' '}
+                        
                         Notes
                     </Navbar.Brand>
                 </Navbar>

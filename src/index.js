@@ -15,6 +15,10 @@ import Blog from './container/pages/Blog.jsx';
 import Post from './container/pages/Post.jsx';
 import Notes from './container/pages/Notes.jsx';
 
+/* add storage development test */
+import UploadImageToS3WithReactS3 from './container/pages/Journal.jsx';
+
+/* just map aplication */
 import SimpleMap from './container/pages/SimpleMap.jsx';
 
 import {
@@ -41,7 +45,7 @@ const routing=(
 	<Route path="/notes/:slug" component={Post} /> 
 	<Route exact path="/about" component={About} />
 	<Route exact path="/map" component={SimpleMap} />
-	
+	<Route exact path="/journal" component={UploadImageToS3WithReactS3} />
 
 	   
 
