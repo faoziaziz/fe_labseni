@@ -4,8 +4,8 @@ const Footer =()=>{
     return (
         <div style={{ backgroundColor: '#617169' }}>
             
-            <Container  style={{color: 'white'}} >
-            <Row>
+          <Container  style={{color: 'white'}} >
+            <Row style={{paddingTop: '1%'}}>
                  <Col xs={6} md={4}>
                     <p style={{}}><b>Alamat</b><br/>
                     Desa Tegalpingen RT05/01 No. 53<br/>
