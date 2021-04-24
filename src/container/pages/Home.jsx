@@ -64,8 +64,8 @@ const Home = () => {
                     </ListGroup.Item>
 
 		    <ListGroup.Item variant="secondary">
-                        <Container>
-                            Riset
+                      <Container>
+			<h2>Riset</h2>
                             <ListGroup horizontal className="my-2" >
                                 <ListGroup.Item>This ListGroup</ListGroup.Item>
                                 <ListGroup.Item>renders horizontally</ListGroup.Item>
@@ -79,7 +79,7 @@ const Home = () => {
 		    <ListGroup.Item  variant="success">
 
                         <Container>
-                            Product
+                            <h2>Product</h2>
                             <ListGroup horizontal className="my-2" >
                                 <ListGroup.Item>This ListGroup</ListGroup.Item>
                                 <ListGroup.Item>renders horizontally</ListGroup.Item>
@@ -91,7 +91,7 @@ const Home = () => {
 
                     <ListGroup.Item variant="light">
                         <Container>
-                            Project
+                            <h2>Project</h2>
                             <ListGroup horizontal className="my-2" >
                                 <ListGroup.Item>This ListGroup</ListGroup.Item>
                                 <ListGroup.Item>renders horizontally</ListGroup.Item>
@@ -103,7 +103,7 @@ const Home = () => {
                    
                     <ListGroup.Item variant="warning">
                         <Container>
-                            Shop
+                            <h2>Shop</h2>
                             <ListGroup horizontal className="my-2" >
                                 <ListGroup.Item>This ListGroup</ListGroup.Item>
                                 <ListGroup.Item>renders horizontally</ListGroup.Item>
@@ -115,7 +115,7 @@ const Home = () => {
 
                     <ListGroup.Item variant="info">
                         <Container>
-                            Konsultasi
+                            <h2>Konsultasi</h2>
                             <ListGroup horizontal className="my-2" >
                                 <ListGroup.Item>
                                     Harusnya ini Gambar : ini bagian text

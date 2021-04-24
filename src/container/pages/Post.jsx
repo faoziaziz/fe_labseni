@@ -9,7 +9,7 @@ import React, {useState, Fragment, useEffect} from 'react';
 import parse, { domToReact, htmlToDOM } from 'html-react-parser';
 import axios from 'axios';
 import {useParams} from 'react-router';
-import {Button, Navbar, Jumbotron} from 'react-bootstrap';
+import {Button, Row, Col,Container, Navbar, Jumbotron} from 'react-bootstrap';
 import Header from '../../component/headers/Header';
 import Footer from '../../component/footers/Footer';
 
@@ -85,21 +85,35 @@ export default function Post(){
             <div className="post-content-view">
 	    
 	  
-	    	<div style={{backgroundColor: 'white'}}>
-	  <ul>
-	  {
-	      post.items.map(item=>(
-		      
-		  <div>
-		    <Jumbotron>
+	    <div style={{backgroundColor: 'white'}}>
+	    <Container>
+	    {
+		post.items.map(item=>(
+		     <Jumbotron>
 	      
 	      <h1 className="display-3"  style={{
 		      display: "flex",
 		      justifyContent: "center",
 		      alignItems: "center"
 		  }} >{item.title}</h1>
-	    </Jumbotron>
-		    
+		     </Jumbotron>
+
+
+		)
+
+			      )
+
+	    }
+	    <Row>
+	    <Col xs={9}>
+	    <Container>
+	    
+	  {
+	      post.items.map(item=>(
+		      
+		  <div>
+		   
+		    <strong>{item.published}</strong>
 		    
 		    
 		    {parse(item.content)}
@@ -107,7 +121,13 @@ export default function Post(){
 	      )
 			    )
 	  }
-	  </ul>
+	    </Container>
+	    </Col>
+	    <Col xs={3}>
+	    <p>aku cinta kamu ciye</p>
+	    </Col>
+	    </Row>
+	    </Container>
 	</div>
             </div>
 	    <Footer />
