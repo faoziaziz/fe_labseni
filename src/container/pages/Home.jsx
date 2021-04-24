@@ -58,11 +58,27 @@ const Home = () => {
 	    
 
             <div>
-                <ListGroup>
+              <ListGroup>
+		{/*
                     <ListGroup.Item style={{backgroundColor: 'black'}}>
                         <IntervalCarousel />
-                    </ListGroup.Item>
+			</ListGroup.Item>
+		   */ }
 
+		    <Jumbotron>
+	      
+	      <h1 className="display-3"  style={{
+		      display: "flex",
+		      justifyContent: "center",
+		      alignItems: "center"
+		  }} >Budak Cinta</h1>
+
+	      <p className="lead"  style={{
+		     display: "flex",
+		     justifyContent: "center",
+		     alignItems: "center"
+		 }}> Takdir lebih dari kita imani, takdir kita cintai. AmorFati</p>
+		    </Jumbotron>
 		    <ListGroup.Item variant="secondary">
                       <Container>
 			<h2>Riset</h2>

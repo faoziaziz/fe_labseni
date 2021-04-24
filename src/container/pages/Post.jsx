@@ -87,6 +87,7 @@ export default function Post(){
 	  
 	    <div style={{backgroundColor: 'white'}}>
 	    <Container>
+	    
 	    {
 		post.items.map(item=>(
 		     <Jumbotron>
@@ -107,7 +108,7 @@ export default function Post(){
 	    <Row>
 	    <Col xs={9}>
 	    <Container>
-	    
+	    <div style={{backgroundColor: 'white'}}>  
 	  {
 	      post.items.map(item=>(
 		      
@@ -121,6 +122,7 @@ export default function Post(){
 	      )
 			    )
 	  }
+	    </div>
 	    </Container>
 	    </Col>
 	    <Col xs={3}>
