@@ -15,6 +15,8 @@ import Footer from '../../component/footers/Footer';
 
 import ControlledCarousel from '../../component/headers/ControlledCarousel';
 import IntervalCarousel from '../../component/headers/IntervalCarousel';
+import Moment from 'react-moment'
+
 /* post data harus dirubah dari bentuk api */
 const postsData = require('./_posts.json');
 
@@ -114,7 +116,7 @@ export default function Post(){
 		      
 		  <div>
 		   
-		    <strong>{item.published}</strong>
+		     <strong><Moment date={item.published} /></strong>
 		    
 		    
 		    {parse(item.content)}
@@ -125,8 +127,11 @@ export default function Post(){
 	    </div>
 	    </Container>
 	    </Col>
+
+	    
 	    <Col xs={3}>
-	    <p>aku cinta kamu ciye</p>
+	    <h2>Ini harusnya list label</h2>
+	    <p>MAntap</p>
 	    </Col>
 	    </Row>
 	    </Container>

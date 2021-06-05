@@ -12,12 +12,12 @@ import {Row, Col, Container, Button, Navbar, Jumbotron} from 'react-bootstrap';
 import ControlledCarousel from '../../component/headers/ControlledCarousel';
 import IntervalCarousel from '../../component/headers/IntervalCarousel';
 import {Helmet} from 'react-helmet';
-
+import Moment from 'react-moment'
 /* This notes just for show the posting from google */
 const Notes =()=>{
     const [data, setData]=useState({items: []})
     const [title, setTitle]=useState(document.title);
-    
+    const [data2, setData2]=useState({});
     useEffect(()=>{
 
 	setTitle("Notes");
@@ -27,7 +27,12 @@ const Notes =()=>{
 		`https://www.googleapis.com/blogger/v3/blogs/3986791581824110654/posts?key=AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY`,
 	    );
 
+	    const result2 = await axios(
+		`https://api.prasimax.net:8000/status`,
+	    );
+
 	    setData(result.data);
+	    setData2(result2.data);
 	}
 	document.title=title;
 	fetchData();
@@ -36,10 +41,14 @@ const Notes =()=>{
 
     return (
 	<div>
+	  {
+		  console.log(data2)
+		 }
 	  <Header />
 	  <Helmet>
             <title>Notes</title>
             <meta name="description" content="Kumpulan tulisan blog yang diwebkan" />
+	    
 	  </Helmet>
 
 	  <div style={{backgroundColor: 'white'}}>
@@ -55,7 +64,7 @@ const Notes =()=>{
 		     display: "flex",
 		     justifyContent: "center",
 		     alignItems: "center"
-		 }}> Catatan dari blog.</p>
+		 }}> Catatan dari blog. {data2.status} man</p>
 	      
 	    </Jumbotron>
 	    <Container>
@@ -67,7 +76,7 @@ const Notes =()=>{
 			    <div>
 			      
 			      <h2><a href={`https://labseni.com/notes/${item.id}`}>{item.title}</a></h2>
-			      <strong>{item.published}</strong>
+			      <strong><Moment date={item.published} /></strong>
 			      
 			      {
 				  parse(item.content)
