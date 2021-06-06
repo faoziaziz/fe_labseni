@@ -83,6 +83,10 @@ export default function Post(){
 
     return (<div>
 	    <Header />
+
+	    {
+		console.log(data.items)
+	    }
 	    
             <div className="post-content-view">
 	    

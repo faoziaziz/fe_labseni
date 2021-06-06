@@ -14,12 +14,15 @@ import Blog from './container/pages/Blog.jsx';
 
 import Post from './container/pages/Post.jsx';
 import Notes from './container/pages/Notes.jsx';
-
+import Admin from './container/pages/Admin.jsx';
+import Faoziaziz from './container/pages/Faoziaziz.jsx'
 /* add storage development test */
 import UploadImageToS3WithReactS3 from './container/pages/Journal.jsx';
 
 /* just map aplication */
 import SimpleMap from './container/pages/SimpleMap.jsx';
+import Bucin from './container/pages/Bucin.jsx';
+
 
 import {
   Route,
@@ -46,6 +49,9 @@ const routing=(
 	<Route exact path="/about" component={About} />
 	<Route exact path="/map" component={SimpleMap} />
 	<Route exact path="/journal" component={UploadImageToS3WithReactS3} />
+	<Route exact path="/admin" component={Admin} />
+	<Route exact path="/bucin" component={Bucin} />
+	<Route exact path="/faoziaziz" component={Faoziaziz} />
 
 	   
 

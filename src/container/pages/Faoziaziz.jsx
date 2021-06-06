@@ -15,8 +15,8 @@ import {Helmet} from 'react-helmet';
 import Moment from 'react-moment'
 
 /* This notes just for show the posting from google */
-const Notes =()=>{
-    const [data, setData]=useState({items: []})
+const Faoziaziz =()=>{
+    const [data, setData]=useState({posts: []})
     const [title, setTitle]=useState(document.title);
     const [data2, setData2]=useState({});
     useEffect(()=>{
@@ -25,14 +25,14 @@ const Notes =()=>{
 	
 	const fetchData = async ()=>{
 	    const result = await axios(
-		`https://www.googleapis.com/blogger/v3/blogs/3986791581824110654/posts?key=AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY`,
+		`https://faoziaziz.id/wp-json/wp/v2/posts/`,
 	    );
 
 	    const result2 = await axios(
 		`https://api.prasimax.net:8000/status`,
 	    );
 
-	    setData(result.data);
+	    setData({posts: result.data});
 	    setData2(result2.data);
 	}
 	document.title=title;
@@ -43,57 +43,58 @@ const Notes =()=>{
     return (
 	<div>
 	  {
-		  console.log(data2)
-		 }
-	  <Header />
-	  <Helmet>
+	      //console.log(data.content.rendered)
+	      console.log(data)
+	  }
+	    <Header />
+	    <Helmet>
             <title>Notes</title>
             <meta name="description" content="Kumpulan tulisan blog yang diwebkan" />
 	    
-	  </Helmet>
+	</Helmet>
 
-	  <div style={{backgroundColor: 'white'}}>
+	    <div style={{backgroundColor: 'white'}}>
 	    <Jumbotron>
-	      
-	      <h1 className="display-3"  style={{
-		      display: "flex",
-		      justifyContent: "center",
-		      alignItems: "center"
-		  }} >Notes</h1>
-
-	      <p className="lead"  style={{
-		     display: "flex",
-		     justifyContent: "center",
-		     alignItems: "center"
-		 }}> Catatan dari blog. {data2.status} man</p>
-	      
-	    </Jumbotron>
-	    <Container>
-	      <Row>  
-		<Col xs={9}>
-		  <Container>
-		    {
-			data.items.map(item=>(
-			    <div>
-			      
-			      <h2><a href={`https://labseni.com/notes/${item.id}`}>{item.title}</a></h2>
-			      <strong><Moment date={item.published} /></strong>
-			      
-			      {
-				  parse(item.content)
-			      }
-			      <hr />
-			    </div>
-			)
-				      )
-		    }
-	</Container>
 	    
-	</Col>
+	    <h1 className="display-3"  style={{
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center"
+	    }} >Notes</h1>
+
+	    <p className="lead"  style={{
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center"
+	    }}> Catatan dari blog. {data2.status} man</p>
+	    
+	    </Jumbotron>
+
+	    
+	    <Container>
+	    <Row>  
+	    <Col xs={9}>
+	    <Container>
+
+	       {
+	      data.posts.map(item=>(
+		      
+		  <div>
+		    {parse(item.content.rendered)} 
+	
+		  </div>
+	      )
+			    )
+	  }
+	    </Container>
+	    
+	    </Col>
 	    <Col xs={3}>
 	    <p>akus sih tahu </p>
 	    </Col>
 	    </Row>
+
+	    
 	    </Container>
 	    </div>
 	    <Footer />
@@ -103,4 +104,4 @@ const Notes =()=>{
 }
 
 
-export default Notes;
+export default Faoziaziz;
