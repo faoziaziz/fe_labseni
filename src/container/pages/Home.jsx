@@ -48,7 +48,7 @@ const Home = () => {
 
     return (
         <div style={{ backgroundColor: 'black' }}>
-            <Header />
+            
 
             {
 		/*
@@ -58,6 +58,7 @@ const Home = () => {
 	    
 
             <div>
+	      <Header />
               <ListGroup>
 		{/*
                     <ListGroup.Item style={{backgroundColor: 'black'}}>

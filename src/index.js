@@ -22,13 +22,14 @@ import UploadImageToS3WithReactS3 from './container/pages/Journal.jsx';
 /* just map aplication */
 import SimpleMap from './container/pages/SimpleMap.jsx';
 import Bucin from './container/pages/Bucin.jsx';
-
+import Product from './container/pages/Product.jsx';
+import News from './container/pages/News.jsx';
 
 import {
-  Route,
-  Switch,
-  Link,
-  BrowserRouter as Router
+    Route,
+    Switch,
+    Link,
+    BrowserRouter as Router
 } from 'react-router-dom';
 
 import About from './container/pages/About'
@@ -38,10 +39,10 @@ import About from './container/pages/About'
   This is routing codes
 */
 const routing=(
-  <Router>
-    <div>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/home" component={Home} />
+	<Router>
+	<div>
+	<Route exact path="/" component={Home} />
+	<Route exact path="/home" component={Home} />
 
 	<Route exact path="/about" component={About} />
 	<Route exact path="/notes" component={Notes} />
@@ -52,15 +53,17 @@ const routing=(
 	<Route exact path="/admin" component={Admin} />
 	<Route exact path="/bucin" component={Bucin} />
 	<Route exact path="/faoziaziz" component={Faoziaziz} />
+	<Route exact path="/product" component={Product} />
+	<Route exact path="/news" component={News} />
 
-	   
+    
 
     </div>
-  </Router>
+	</Router>
 )
 ReactDOM.render(
-  routing,
-  document.getElementById('root')
+    routing,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
