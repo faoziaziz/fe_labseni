@@ -33,7 +33,7 @@ const Product =()=>{
 	    );
 */
 	    setData({posts: result.data});
-	    setData2(result2.data);
+//	    setData2(result2.data);
 	}
 	document.title=title;
 	fetchData();
@@ -42,10 +42,7 @@ const Product =()=>{
 
     return (
 	<div>
-	  {
-	      //console.log(data.content.rendered)
-	      console.log(data)
-	  }
+
 	    <Header />
 	    <Helmet>
            <title>Product</title>
