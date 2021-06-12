@@ -40,9 +40,7 @@ const Notes =()=>{
 
     return (
 	<div>
-	  {
-		  console.log(data2)
-		 }
+	
 	  <Header />
 	  <Helmet>
             <title>Notes</title>

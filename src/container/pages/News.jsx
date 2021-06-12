@@ -28,12 +28,9 @@ const News =()=>{
 		`https://faoziaziz.id/wp-json/wp/v2/posts?categories=3`,
 	    );
 
-	    const result2 = await axios(
-		`https://api.prasimax.net:8000/status`,
-	    );
 
 	    setData({posts: result.data});
-	    setData2(result2.data);
+ 
 	}
 	document.title=title;
 	fetchData();
