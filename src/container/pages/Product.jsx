@@ -28,10 +28,10 @@ const Product =()=>{
 		`https://faoziaziz.id/wp-json/wp/v2/posts?categories=2`,
 	    );
 
-	    const result2 = await axios(
+/*	    const result2 = await axios(
 		`https://api.prasimax.net:8000/status`,
 	    );
-
+*/
 	    setData({posts: result.data});
 	    setData2(result2.data);
 	}
@@ -48,8 +48,8 @@ const Product =()=>{
 	  }
 	    <Header />
 	    <Helmet>
-            <title>Product</title>
-            <meta name="description" content="Kumpulan tulisan blog yang diwebkan" />x
+           <title>Product</title>
+            <meta name="description" content="Kumpulan tulisan blog yang diwebkan" />
 	    
 	</Helmet>
 
