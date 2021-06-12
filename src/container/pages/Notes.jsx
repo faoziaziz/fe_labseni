@@ -28,12 +28,10 @@ const Notes =()=>{
 		`https://www.googleapis.com/blogger/v3/blogs/3986791581824110654/posts?key=AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY`,
 	    );
 
-	    const result2 = await axios(
-		`https://api.prasimax.net:8000/status`,
-	    );
+	    
 
 	    setData(result.data);
-	    setData2(result2.data);
+	    
 	}
 	document.title=title;
 	fetchData();
@@ -65,7 +63,7 @@ const Notes =()=>{
 		     display: "flex",
 		     justifyContent: "center",
 		     alignItems: "center"
-		 }}> Catatan dari blog. {data2.status} man</p>
+		 }}> Catatan dari blog. man</p>
 	      
 	    </Jumbotron>
 	    <Container>
