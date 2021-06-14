@@ -27,10 +27,7 @@ const postsData = require('./_posts.json');
 
 
 const findPostBySlug=(slug, data)=>{
-    console.log("ampas")
-    console.log( data);
-    console.log("slug");
-    console.log(slug);
+    
     console.log(data.items.filter(o=>o.id.includes(slug)));
     return data.items.filter(o=>o.id.includes(slug));
 }
@@ -51,21 +48,7 @@ export default function Post(){
 	    setData(result.data);
 	}
 	
-	/*
-	const fetchData = () =>{
-	    axios.get('https://jsonplaceholder.typicode.com/posts')
-	        .then(resp => {
-		    setData(resp.data);
-		      var {slug}=useParams(),
-			  post = data.items.find(o=>o.id===slug);
-		    setPostingan(post);
-		})
-	        .catch(err => {
-		    // Handle Error Here
-		    console.error(err);
-		});
-
-	}*/
+	
 	fetchData();
 	
 	
@@ -75,10 +58,6 @@ export default function Post(){
     var {slug}=useParams();
     var post = {items: findPostBySlug(slug, data)};
 
-    console.log("posteing");
-    console.log(post);
-    console.log("title2")
-    console.log(post.items.title);
     
 
     return (<div>

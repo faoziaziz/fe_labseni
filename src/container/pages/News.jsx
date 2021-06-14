@@ -39,10 +39,7 @@ const News =()=>{
 
     return (
 	<div>
-	  {
-	      //console.log(data.content.rendered)
-	      console.log(data)
-	  }
+	  
 	    <Header />
 	    <Helmet>
             <title>Notes</title>
@@ -77,7 +74,7 @@ const News =()=>{
 	      data.posts.map(item=>(
 		      
 		  <div>
-		    <h1>{item.title.rendered}</h1>
+		    <h1><a href={`https://labseni.com/news/${item.slug}`}>{item.title.rendered}</a></h1>
 		    {parse(item.content.rendered)} 
 	
 		  </div>

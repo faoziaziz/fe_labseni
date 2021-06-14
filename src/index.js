@@ -33,7 +33,7 @@ import {
 } from 'react-router-dom';
 
 import About from './container/pages/About'
-//import Login from 'container/pages/Login'
+import Berita from './container/pages/Berita'
 
 /*
   This is routing codes
@@ -43,20 +43,18 @@ const routing=(
 	<div>
 	<Route exact path="/" component={Home} />
 	<Route exact path="/home" component={Home} />
-
 	<Route exact path="/about" component={About} />
+
 	<Route exact path="/notes" component={Notes} />
 	<Route path="/notes/:slug" component={Post} /> 
-	<Route exact path="/about" component={About} />
-	<Route exact path="/map" component={SimpleMap} />
+	
 	<Route exact path="/journal" component={UploadImageToS3WithReactS3} />
 	<Route exact path="/admin" component={Admin} />
 	<Route exact path="/bucin" component={Bucin} />
 	<Route exact path="/faoziaziz" component={Faoziaziz} />
 	<Route exact path="/product" component={Product} />
 	<Route exact path="/news" component={News} />
-
-    
+	<Route exact path="/news/:slug" component={Berita} />
 
     </div>
 	</Router>
