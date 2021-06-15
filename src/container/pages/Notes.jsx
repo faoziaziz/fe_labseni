@@ -16,27 +16,77 @@ import Moment from 'react-moment'
 
 /* This notes just for show the posting from google */
 const Notes =()=>{
+
+    /* set function */
+
     const [data, setData]=useState({items: []})
     const [title, setTitle]=useState(document.title);
     const [data2, setData2]=useState({});
+    const [prev, setPrev]=useState("");
+    const [now, setNow]=useState("");
+    const [next, setNext]=useState("");
+
+    
     useEffect(()=>{
 
 	setTitle("Notes");
 	
-	const fetchData = async ()=>{
-	    const result = await axios(
-		`https://www.googleapis.com/blogger/v3/blogs/3986791581824110654/posts?key=AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY`,
-	    );
+	const fetchData = async (now)=>{
+
+	    if (now===""){
+
+		const result = await axios(
+		`https://www.googleapis.com/blogger/v3/blogs/3986791581824110654/posts`,
+		{
+		    params:
+		    {
+			key: "AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY",
+			
+
+		    }
+
+		    }
+		);
+
+			    setData(result.data);
+		
+
+	    } else {
+
+		/* if not empty string now */
+		const result = await axios(
+		    `https://www.googleapis.com/blogger/v3/blogs/3986791581824110654/posts`,
+		    {
+			params:
+			{
+			    key: "AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY",
+			    nextPageToken: now,
+			    
+
+			}
+
+		    }
+		);
+			    setData(result.data);
+
+	    }
 
 	    
 
-	    setData(result.data);
+
 	    
 	}
 	document.title=title;
-	fetchData();
+
+	    const interval=setInterval(()=>{
+		fetchData(now)
+	    },1000)
+       
+       
+	return()=>clearInterval(interval)
 	
-    }, []);
+	
+    },[now]);
 
     return (
 	<div>
@@ -84,6 +134,9 @@ const Notes =()=>{
 				      )
 		    }
 	</Container>
+
+	    <button onClick={()=>setNow(data.nextPageToken)}>  {now}  : {data.nextPageToken}
+	</button>
 	    
 	</Col>
 	    <Col xs={3}>
