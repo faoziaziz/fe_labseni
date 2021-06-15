@@ -25,6 +25,7 @@ const Notes =()=>{
     const [prev, setPrev]=useState("");
     const [now, setNow]=useState("");
     const [next, setNext]=useState("");
+    
 
     
     useEffect(()=>{
@@ -33,64 +34,42 @@ const Notes =()=>{
 	
 	const fetchData = async (now)=>{
 
-	    if (now===""){
-
+	   
 		const result = await axios(
-		`https://www.googleapis.com/blogger/v3/blogs/3986791581824110654/posts`,
-		{
-		    params:
-		    {
-			key: "AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY",
-			
-
-		    }
-
-		    }
+		`https://www.googleapis.com/blogger/v3/blogs/3986791581824110654/posts?key=AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY`+now,
+		
 		);
-
-			    setData(result.data);
+		    setData(result.data);
 		
 
-	    } else {
-
-		/* if not empty string now */
-		const result = await axios(
-		    `https://www.googleapis.com/blogger/v3/blogs/3986791581824110654/posts`,
-		    {
-			params:
-			{
-			    key: "AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY",
-			    nextPageToken: now,
-			    
-
-			}
-
-		    }
+	   	const result2 = await axios(
+		`https://www.googleapis.com/blogger/v2/blogs/3986791581824110654/posts?key=AIzaSyBQCg4liKjaGn5MoGBmsGUFjU0W5ejuCZY`+now,
+		
 		);
-			    setData(result.data);
 
-	    }
-
+		setData2(result2.data);
 	    
 
 
 	    
 	}
-	document.title=title;
+	fetchData(now)
 
-	    const interval=setInterval(()=>{
-		fetchData(now)
-	    },1000)
+
+	    
        
        
-	return()=>clearInterval(interval)
-	
+		
 	
     },[now]);
 
     return (
 	<div>
 	
+	{
+	console.log(data)
+
+	}
 	  <Header />
 	  <Helmet>
             <title>Notes</title>
@@ -134,9 +113,15 @@ const Notes =()=>{
 				      )
 		    }
 	</Container>
+		
 
-	    <button onClick={()=>setNow(data.nextPageToken)}>  {now}  : {data.nextPageToken}
-	</button>
+	   
+<p>{data2.nextPageToken}</p>
+{data2.nextPageToken===undefined?null:<button onClick={()=>{
+	setNow("&pageToken="+data2.nextPageToken);
+	window.scrollTo({top: 0, behavior: 'smooth'})
+
+}}>Selanjutnya </button>}
 	    
 	</Col>
 	    <Col xs={3}>
