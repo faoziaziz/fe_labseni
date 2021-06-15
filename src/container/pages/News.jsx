@@ -19,6 +19,10 @@ const News =()=>{
     const [data, setData]=useState({posts: []})
     const [title, setTitle]=useState(document.title);
     const [data2, setData2]=useState({});
+    const [getHeader, setGetHeader]=useState({});
+    const [totalPages, setTotalPages]=useState(1);
+    const [currentPage, setCurrentPage]=useState(1);
+
     useEffect(()=>{
 
 	setTitle("Notes");
@@ -28,6 +32,8 @@ const News =()=>{
 		`https://faoziaziz.id/wp-json/wp/v2/posts?categories=3`,
 	    );
 
+	    setGetHeader(result.headers);
+	    
 
 	    setData({posts: result.data});
  
@@ -38,8 +44,11 @@ const News =()=>{
     }, []);
 
     return (
+	
 	<div>
-	  
+	  	{
+	    console.log(parseInt(getHeader["x-wp-totalpages"]))
+	}
 	    <Header />
 	    <Helmet>
             <title>Notes</title>
@@ -82,7 +91,22 @@ const News =()=>{
 			    )
 	  }
 	    </Container>
-	    
+	    {
+currentPage===1?null:<button onClick={()=>{
+setCurrentPage(currentPage-1);
+	window.scrollTo({top: 0, behavior: 'smooth'})
+
+}}>Sebelumnya</button>
+
+		}
+		{
+currentPage===totalPages?null:<button onClick={()=>{
+	setCurrentPage(currentPage+1);
+	window.scrollTo({top: 0, behavior: 'smooth'})
+
+}}>Selanjutnya</button>
+
+		}
 	    </Col>
 	    <Col xs={3}>
 	    <p>akus sih tahu </p>
