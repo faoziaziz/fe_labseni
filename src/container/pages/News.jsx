@@ -46,9 +46,7 @@ const News =()=>{
     return (
 	
 	<div>
-	  	{
-	    console.log(parseInt(getHeader["x-wp-totalpages"]))
-	}
+	  
 	    <Header />
 	    <Helmet>
             <title>Notes</title>
