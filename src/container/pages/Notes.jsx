@@ -66,10 +66,6 @@ const Notes =()=>{
     return (
 	<div>
 	
-	{
-	console.log(data)
-
-	}
 	  <Header />
 	  <Helmet>
             <title>Notes</title>

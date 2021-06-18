@@ -24,6 +24,8 @@ import SimpleMap from './container/pages/SimpleMap.jsx';
 import Bucin from './container/pages/Bucin.jsx';
 import Product from './container/pages/Product.jsx';
 import News from './container/pages/News.jsx';
+import OCR from './container/pages/OCR.jsx';
+
 
 import {
     Route,
@@ -55,6 +57,7 @@ const routing=(
 	<Route exact path="/product" component={Product} />
 	<Route exact path="/news" component={News} />
 	<Route exact path="/news/:slug" component={Berita} />
+	<Route exact path="/ocr" component={OCR} />
 
     </div>
 	</Router>
