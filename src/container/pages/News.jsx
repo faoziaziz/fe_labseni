@@ -82,7 +82,10 @@ const News =()=>{
 		      
 		  <div>
 		    <h1><a href={`https://labseni.com/news/${item.slug}`}>{item.title.rendered}</a></h1>
-		    {parse(item.content.rendered)} 
+		    <strong><Moment date={item.date} /></strong>
+		    {
+			parse(item.content.rendered)
+		    } 
 	
 		  </div>
 	      )

@@ -25,7 +25,7 @@ import Bucin from './container/pages/Bucin.jsx';
 import Product from './container/pages/Product.jsx';
 import News from './container/pages/News.jsx';
 import OCR from './container/pages/OCR.jsx';
-
+import Inv from './container/pages/Inv.jsx';
 
 import {
     Route,
@@ -58,6 +58,7 @@ const routing=(
 	<Route exact path="/news" component={News} />
 	<Route exact path="/news/:slug" component={Berita} />
 	<Route exact path="/ocr" component={OCR} />
+	<Route exact path="/inv" component={Inv} />
 
     </div>
 	</Router>

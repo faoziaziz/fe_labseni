@@ -112,9 +112,9 @@ const Notes =()=>{
 		
 
 	   
-<p>{data2.nextPageToken}</p>
-{data2.nextPageToken===undefined?null:<button onClick={()=>{
-	setNow("&pageToken="+data2.nextPageToken);
+
+{data.nextPageToken===undefined?null:<button onClick={()=>{
+	setNow("&pageToken="+data.nextPageToken);
 	window.scrollTo({top: 0, behavior: 'smooth'})
 
 }}>Selanjutnya </button>}
