@@ -21,7 +21,8 @@ const Walkto = () => {
   });
 
   return (
-    <div>
+      <div>
+	<Header/>
       {audio}
       <pre>{JSON.stringify(state, null, 2)}</pre>
       <button onClick={controls.pause}>Pause</button>
@@ -36,6 +37,7 @@ const Walkto = () => {
       <br/>
       <button onClick={() => controls.seek(state.time - 5)}>-5 sec</button>
       <button onClick={() => controls.seek(state.time + 5)}>+5 sec</button>
+      <Footer />
     </div>
   );
 };
