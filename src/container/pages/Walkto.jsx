@@ -18,7 +18,7 @@ const initial=[
     {
 	count: 0,
 	filename: "80030113-4f81-469d-84db-20c7726f459b",
-	username: "Didi Setiawan",
+	username: "Jean paul sartre",
 	label: "hai indi",
 	longitude: 123.432,
 	latitude: 321.321,
@@ -29,7 +29,7 @@ const initial=[
     {
 	count: 1,
 	filename: "25a8492d-f7b4-46ad-953a-9ede2996caad",
-	username: "Didi Setiawan",
+	username: "Jean paul sarte",
 	label: "hai indi",
 	longitude: 123.432,
 	latitude: 321.321,
